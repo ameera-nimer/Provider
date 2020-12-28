@@ -10,7 +10,7 @@ import 'package:ProviderAssignment/db_helper.dart';
   Widget build(BuildContext context) {
     DBHelper.dbHelper.selectAllTasks().then((value) => {
       Navigator.of(context).push(MaterialPageRoute(builder: (context){
-           return ToDoApp();
+           return ToDoApp(value);
       }))
     });
     return Scaffold(

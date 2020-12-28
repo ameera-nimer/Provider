@@ -1,16 +1,14 @@
 
-
 import 'package:ProviderAssignment/task_model.dart';
-import 'package:ProviderAssignment/task_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'app_provider.dart';
-import 'db_helper.dart';
 import 'new_task.dart';
 
 class ToDoApp extends StatefulWidget {
+  List<Task> tasks  ;
+  ToDoApp(this.tasks);
 
   @override
   _ToDoAppState createState() => _ToDoAppState();
@@ -83,7 +81,7 @@ class _ToDoAppState extends State<ToDoApp> with SingleTickerProviderStateMixin {
       Expanded(
         child: TabBarView(
           controller: tabController,
-          children: [AllTasks(),CompleteTasks(),IncompleteTasks()]),
+          children: [AllTasks(widget.tasks),CompleteTasks(widget.tasks),IncompleteTasks(widget.tasks)]),
           )
 
 
@@ -107,6 +105,8 @@ class _ToDoAppState extends State<ToDoApp> with SingleTickerProviderStateMixin {
 }
 
 class AllTasks  extends StatelessWidget {
+  List<Task> tasks  ;
+  AllTasks(this.tasks);
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -197,6 +197,8 @@ class AllTasks  extends StatelessWidget {
 }
 
 class CompleteTasks  extends StatelessWidget {
+   List<Task> tasks  ;
+  CompleteTasks(this.tasks);
   @override
   Widget build(BuildContext context) {
 
@@ -289,7 +291,8 @@ class CompleteTasks  extends StatelessWidget {
 
 class IncompleteTasks  extends StatelessWidget {
  
-
+ List<Task> tasks  ;
+  IncompleteTasks(this.tasks);
   
   @override
   Widget build(BuildContext context) {

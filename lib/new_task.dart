@@ -1,13 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ProviderAssignment/task_model.dart';
-import 'package:ProviderAssignment/splash.dart';
 import 'package:provider/provider.dart';
-
-import 'app_provider.dart';
-import 'db_helper.dart';
-
-
+import 'package:ProviderAssignment/app_provider.dart';
 
 class NewTask extends StatefulWidget{
   @override
